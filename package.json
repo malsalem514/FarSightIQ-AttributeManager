@@ -1,0 +1,32 @@
+{
+  "name": "farsightiq-attribute-manager",
+  "version": "9.4.0",
+  "description": "FarsightIQ Attribute Manager - AI-Powered Product Enrichment Platform",
+  "author": "Musa Al-Salem",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "visionmerch-ai-product-enrichment"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd visionmerch-ai-product-enrichment && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd visionmerch-ai-product-enrichment && npm run build",
+    "start": "cd backend && npm start",
+    "test": "cd backend && npm test",
+    "test:e2e": "playwright test",
+    "clean": "rm -rf node_modules backend/node_modules visionmerch-ai-product-enrichment/node_modules backend/dist visionmerch-ai-product-enrichment/dist"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "concurrently": "^9.0.0",
+    "playwright": "^1.57.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "db": {
+    "user": "attr_mgr",
+    "connectString": "localhost:1521/FREEPDB1"
+  },
+  "remoteDb": {
+    "user": "MERCH",
+    "connectString": "100.90.60.20:1521/mprdpdb1.db"
+  },
+  "savedDatabases": [
+    {
+      "name": "VCP19QA (QA)",
+      "user": "MERCH",
+      "connectString": "srv-db-101:1521/VCP19QA",
+      "isRemote": true
+    },
+    {
+      "name": "VCP19DEV (Dev)",
+      "user": "MERCH_DEV",
+      "connectString": "srv-db-102:1521/VCP19DEV",
+      "isRemote": true
+    },
+    {
+      "name": "NRF Demo (OCI)",
+      "user": "merch",
+      "connectString": "nrf-oci-db-01:1521/demodb",
+      "isRemote": true
+    },
+    {
+      "name": "HRI MPRD (Prod)",
+      "user": "MERCH",
+      "connectString": "10.210.48.30:1521/mprdpdb1.db",
+      "isRemote": true
+    },
+    {
+      "name": "JDS MPRD (Prod)",
+      "user": "MERCH",
+      "connectString": "100.90.60.20:1521/mprdpdb1.db",
+      "isRemote": true
+    },
+    {
+      "name": "Local Docker",
+      "user": "attr_mgr",
+      "connectString": "localhost:1521/FREEPDB1",
+      "isRemote": false
+    }
+  ],
+  "mode": "READ_WRITE_IRI",
+  "lastResync": "2026-01-07T17:29:57.682Z"
+}

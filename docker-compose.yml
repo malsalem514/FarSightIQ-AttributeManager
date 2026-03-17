@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    env_file:
+      - ./backend/.env
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3002/api/health/live').then(r => { if (!r.ok) process.exit(1) })"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./visionmerch-ai-product-enrichment
+      dockerfile: Dockerfile
+    ports:
+      - "8888:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
